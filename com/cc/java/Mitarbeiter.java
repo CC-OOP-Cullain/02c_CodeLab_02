@@ -1,31 +1,33 @@
 package com.cc.java;
 
 public class Mitarbeiter {
-	
-	private String familyName ;
-	private String firstName;
-	private String role ;
-	private int yearOfEntry ;
-	
-	public Mitarbeiter(String familyName, String firstName, String role, int yearOfEntry) {
-		this.familyName = familyName;
-		this.firstName = firstName;
-		this.role = role;
-		this.yearOfEntry = yearOfEntry;
-	}
 
-
-	public String getInfo(String flag) {
-		switch (flag) {
-			case "#name":
-				return this.firstName +" " + this.familyName;
-			case "#position":
-				return this.role;
-			case "#time":
-				return Integer.toString(this.yearOfEntry);
-			default:
-			return "ERROR";
-		}
-	}
-
+    private String familyName;
+    private String name;
+    private String role;
+    private int yearofEntry;
+    
+    // Konstruktor
+    public Mitarbeiter(String familyName, String name, String role, int yearofEntry) {
+        this.familyName = familyName;
+        this.name = name;
+        this.role = role;
+        this.yearofEntry = yearofEntry;
+    }
+    
+    // Ausgabeswitch
+    public String getInfo(String parameter) {
+        switch(parameter) {
+            case "familyName":
+                return familyName;
+            case "name":
+                return name;
+            case "role":
+                return role;
+            case "yearofEntry":
+                return Integer.toString(yearofEntry);
+            default:
+                return "Ungültiger Parameter";
+        }
+    }
 }
